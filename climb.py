@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import csv
+import json
 
 def get_stock_price(symbol):
     url = f"https://tw.finance.yahoo.com/quote/{symbol}"
@@ -14,6 +14,26 @@ def get_stock_price(symbol):
             return "Price not found"
     else:
         return "Failed to fetch data"
+    
+def get_exchange_rate_USD():
+    url = 'https://mma.sinopac.com/ws/share/rate/ws_exchange.ashx'
+
+    headers = {
+        'Authorization': 'Bearer your_api_key',
+    }
+
+    params = {
+        'Lang': 'zh-TW',
+        'Currency': 'USD',
+    }
+    
+    response = requests.get(url, headers=headers, params=params)
+    data = json.loads(response.content)
+    
+    return float(data[0]['SubInfo'][0]['DataValue2'])
+
+
+exchange_rate_USD = get_exchange_rate_USD()
 
 # 股票代碼
 stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "VT", "VTI"]
@@ -28,6 +48,7 @@ for symbol in stock_symbols:
 out = open("stock_prices.txt", mode = "w")
 for i in range(len(stock_symbols)):
     out.write(f"{stock_symbols[i]},{stock_prices[i]}\n")
+out.write(f"USD,{exchange_rate_USD}\n")
 out.close()
 
 print("股價已成功寫入 stock_prices.txt 檔案中.")
