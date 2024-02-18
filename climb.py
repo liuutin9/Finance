@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from openpyxl import Workbook, load_workbook
+import schedule
+import time
 
 def get_stock_price(symbol):
     url = f"https://tw.finance.yahoo.com/quote/{symbol}"
