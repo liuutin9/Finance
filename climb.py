@@ -48,11 +48,16 @@ stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "
 # 獲取股價
 stock_prices = {}
 
-# print(stock_symbols[0][0:-3])
+print(stock_symbols[0][-3])
 
 for symbol in stock_symbols:
-    wb[symbol]
+    if (symbol[len(symbol)-3] == '.'):
+        wb[symbol]["C3"] = get_stock_price(symbol)
+    else:
+        wb[symbol]["H3"] = get_stock_price(symbol)
     stock_prices[symbol] = get_stock_price(symbol)
+    
+wb.save("帳目表.xlsx")
     
 # 寫入 txt 檔
 out = open("stock_prices.txt", mode = "w")
