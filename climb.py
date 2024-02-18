@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from openpyxl import Workbook, load_workbook
 
 def get_stock_price(symbol):
     url = f"https://tw.finance.yahoo.com/quote/{symbol}"
@@ -33,12 +32,6 @@ def get_exchange_rate_USD():
     
     return float(data[0]['SubInfo'][0]['DataValue2'])
 
-wb = load_workbook("帳目表.xlsx", data_only = True)
-
-ws = wb["總資產"]
-
-print(ws["Q2"].value)
-
 
 exchange_rate_USD = get_exchange_rate_USD()
 
@@ -48,21 +41,18 @@ stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "
 # 獲取股價
 stock_prices = {}
 
-print(stock_symbols[0][-3])
+# print(stock_symbols[0][0:-3])
 
 for symbol in stock_symbols:
-    if (symbol[len(symbol)-3] == '.'):
-        wb[symbol]["C3"] = get_stock_price(symbol)
-    else:
-        wb[symbol]["H3"] = get_stock_price(symbol)
+    wb[symbol]
     stock_prices[symbol] = get_stock_price(symbol)
     
 wb.save("帳目表.xlsx")
     
 # 寫入 txt 檔
 out = open("stock_prices.txt", mode = "w")
-for stock in stock_symbols:
-    out.write(f"{stock},{stock_prices[stock]}\n")
+for i in range(len(stock_symbols)):
+    out.write(f"{stock_symbols[i]},{stock_prices[i]}\n")
 out.write(f"USD,{exchange_rate_USD}\n")
 out.close()
 
