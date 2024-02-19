@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 from openpyxl import Workbook, load_workbook
 import schedule
-import time
+import datetime
 
 def get_stock_price(symbol):
     url = f"https://tw.finance.yahoo.com/quote/{symbol}"
@@ -65,4 +65,11 @@ wb.save("帳目表.xlsx")
 
 # print("股價已成功寫入 stock_prices.txt 檔案中.")
 
+now = datetime.datetime.now()
+
+log = open("log.txt", mode = "w")
+log.write(f"{str(now)}\n")
+log.write("Success!\n")
+
+print(now)
 print("Success!")
