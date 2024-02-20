@@ -65,11 +65,12 @@ wb.save("帳目表.xlsx")
 
 # print("股價已成功寫入 stock_prices.txt 檔案中.")
 
-now = datetime.datetime.now()
+now = datetime.datetime.now().replace(microsecond = 0)
 
 log = open("log.txt", mode = "w")
 log.write(f"{str(now)}\n")
 log.write("Success!\n")
+log.close()
 
 print(now)
 print("Success!")
