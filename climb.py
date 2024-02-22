@@ -55,7 +55,7 @@ for symbol in stock_symbols:
 wb["投資"]["G2"].value = get_exchange_rate_USD()
     
 wb.save("帳目表.xlsx")
-    
+
 # 寫入 txt 檔
 # out = open("stock_prices.txt", mode = "w")
 # for i in range(len(stock_symbols)):
