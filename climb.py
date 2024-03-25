@@ -41,7 +41,7 @@ wb_getValue.close()
 
 wb = load_workbook("帳目表.xlsx")
 
-wb["投資"]["F10"].value = lastValue
+wb["投資"]["A16"].value = lastValue
 
 # 股票代碼
 stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "VT", "VTI"]
