@@ -45,9 +45,7 @@ stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "
 # 獲取股價
 stock_prices = {}
 
-wb["投資"]["A16"].value = wb["投資"]["F10"].value
-
-wb.save("帳目表.xlsx")
+wb["投資"]["A16"].value = float(wb["投資"]["F10"].value)
 
 # modify excel file
 for symbol in stock_symbols:
@@ -58,7 +56,7 @@ for symbol in stock_symbols:
         
 wb["投資"]["G2"].value = get_exchange_rate_USD()
 
-wb["投資"]["B16"].value = wb["投資"]["F10"].value
+wb["投資"]["B16"].value = float(wb["投資"]["F10"].value)
     
 wb.save("帳目表.xlsx")
 
