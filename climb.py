@@ -36,7 +36,6 @@ def get_exchange_rate_USD():
     return float(data[0]['SubInfo'][0]['DataValue2'])
 
 wb_getValue = load_workbook("帳目表.xlsx", data_only = True)
-print(wb_getValue["投資"]["F10"].value)
 lastValue = float(wb_getValue["投資"]["F10"].value)
 wb_getValue.close()
 
