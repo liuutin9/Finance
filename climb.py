@@ -49,7 +49,7 @@ stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "
 # 獲取股價
 stock_prices = {}
 
-wb["投資"]["A16"].value = float(wb["投資"]["F10"].value)
+# wb["投資"]["A16"].value = float(wb["投資"]["F10"].value)
 
 # modify excel file
 for symbol in stock_symbols:
