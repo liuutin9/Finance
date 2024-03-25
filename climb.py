@@ -47,6 +47,8 @@ stock_prices = {}
 
 wb["投資"]["A16"].value = wb["投資"]["F10"].value
 
+wb.save("帳目表.xlsx")
+
 # modify excel file
 for symbol in stock_symbols:
     if (symbol[len(symbol)-3] == '.'):
