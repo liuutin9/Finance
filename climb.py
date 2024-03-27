@@ -36,12 +36,15 @@ def get_exchange_rate_USD():
     return float(data[0]['SubInfo'][0]['DataValue2'])
 
 wb_getValue = load_workbook("帳目表.xlsx", data_only = True)
-lastValue = float(wb_getValue["投資"]["F10"].value)
+lastData = wb_getValue["投資"]["F10"].value
+if (type(lastData) != 'NoneType'):
+    lastValue = float(wb_getValue["投資"]["F10"].value)
 wb_getValue.close()
 
 wb = load_workbook("帳目表.xlsx")
 
-wb["投資"]["A16"].value = lastValue
+if (type(lastData) != 'NoneType'):
+    wb["投資"]["A16"].value = lastValue
 
 # 股票代碼
 stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VEA", "VT", "VTI"]
