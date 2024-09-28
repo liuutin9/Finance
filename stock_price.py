@@ -41,9 +41,13 @@ stock_prices = {}
 
 log = open("stock_price.txt", mode = "w")
 
+exchangeRateUSD = get_exchange_rate_USD()
+
 # modify excel file
 for symbol in stock_symbols:
-    stockPrice = get_stock_price(symbol)
+    stockPrice = float(get_stock_price(symbol))
+    if symbol[0].isalpha():
+        stockPrice *= exchangeRateUSD
     log.writelines(f"{symbol},{stockPrice}\n")
 
 log.close()
