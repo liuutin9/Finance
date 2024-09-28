@@ -42,10 +42,14 @@ stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VT"]
 # 獲取股價
 stock_prices = {}
 
+log = open("stock_price.txt", mode = "w")
+
 # modify excel file
 for symbol in stock_symbols:
     if (symbol[len(symbol)-3] == '.'):
-        wb[symbol]["C3"].value = get_stock_price(symbol)
+        stockPrice = get_stock_price(symbol)
+        wb[symbol]["C3"].value = stockPrice
+        log.writelines(f"{symbol},{stockPrice}\n")
     else:
         wb[symbol]["H3"].value = get_stock_price(symbol)
         
@@ -53,6 +57,8 @@ wb["投資"]["G2"].value = get_exchange_rate_USD()
     
 wb.save("帳目表.xlsx")
 wb.close()
+
+log.close()
 
 now = datetime.datetime.now().replace(microsecond = 0)
 
