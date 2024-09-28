@@ -16,6 +16,19 @@ def get_stock_price(symbol):
     else:
         return "Failed to fetch data"
     
+def get_taiwan_stock_price(stocks):
+    url = f"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL"
+    response = requests.get(url)
+    data = json.loads(response.content)
+    
+    priceList = []
+    
+    for stock in data:
+        if stock['Code'] in stocks:
+            priceList.append(f"{stock['Name']},{stock['ClosingPrice']}")
+    
+    return priceList
+    
 def get_exchange_rate_USD():
     url = 'https://mma.sinopac.com/ws/share/rate/ws_exchange.ashx'
 
@@ -34,21 +47,26 @@ def get_exchange_rate_USD():
     return float(data[0]['SubInfo'][0]['DataValue2'])
 
 # 股票代碼
-stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "2891.TW", "BND", "VT"]
+stock_symbols = ["BND", "VT"]
+stocks = ['006208', '00692', '00878', '2890', '2891']
 
 # 獲取股價
 stock_prices = {}
 
-log = open("stock_price.txt", mode = "w")
+log = open("stock_price.txt", mode = "w", encoding = "utf-8")
 
 exchangeRateUSD = get_exchange_rate_USD()
+
+taiwanStockPriceList = get_taiwan_stock_price(stocks)
+
+for stock in taiwanStockPriceList:
+    print(stock, file = log)
 
 # modify excel file
 for symbol in stock_symbols:
     stockPrice = float(get_stock_price(symbol))
-    if symbol[0].isalpha():
-        stockPrice *= exchangeRateUSD
-    log.writelines(f"{symbol},{stockPrice}\n")
+    stockPrice *= exchangeRateUSD
+    print(f"{symbol},{stockPrice}", file = log)
 
 log.close()
 
