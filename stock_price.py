@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from openpyxl import load_workbook
 import datetime
 
 def get_stock_price(symbol):
@@ -34,33 +33,22 @@ def get_exchange_rate_USD():
     
     return float(data[0]['SubInfo'][0]['DataValue2'])
 
-wb = load_workbook("帳目表.xlsx")
-
 # 股票代碼
-stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "BND", "VT"]
+stock_symbols = ["006208.TW", "00692.TW", "00878.TW", "2890.TW", "2891.TW", "BND", "VT"]
 
 # 獲取股價
 stock_prices = {}
 
+log = open("stock_price.txt", mode = "w")
+
 # modify excel file
 for symbol in stock_symbols:
-    if (symbol[len(symbol)-3] == '.'):
-        stockPrice = get_stock_price(symbol)
-        wb[symbol]["C3"].value = stockPrice
-    else:
-        wb[symbol]["H3"].value = get_stock_price(symbol)
-        
-wb["投資"]["G2"].value = get_exchange_rate_USD()
-    
-wb.save("帳目表.xlsx")
-wb.close()
+    stockPrice = get_stock_price(symbol)
+    log.writelines(f"{symbol},{stockPrice}\n")
+
+log.close()
 
 now = datetime.datetime.now().replace(microsecond = 0)
-
-log = open("log.txt", mode = "w")
-log.write(f"{str(now)}\n")
-log.write("Success!\n")
-log.close()
 
 print(now)
 print("Success!")
