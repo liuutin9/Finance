@@ -73,8 +73,9 @@ print(str(stockRepo).replace("'", '"'), file = stockRepoFile)
     
 stockRepoFile.close()
 
-
+log = open("stock_repo_log.txt", mode = "w", encoding = "utf-8")
 now = datetime.datetime.now().replace(microsecond = 0)
+print(now, file = log)
 print(now)
-print("Success!")
-
+print("Stock Repo Update Success!")
+log.close()
