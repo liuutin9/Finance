@@ -15,7 +15,7 @@ def viewRecord():
     outputRows.append('=' * description_width + ' ' + '=' * amount_width)
     # 遍歷每個項目，並將其格式化後添加到輸出行
     for item in items:
-        outputRows.append(item[0].ljust(description_width) + ' ' + str(item[1]).ljust(amount_width))
+        outputRows.append(item[0].ljust(description_width) + ' ' + item[1].ljust(amount_width))
     # 再次添加分隔線
     outputRows.append('=' * description_width + ' ' + '=' * amount_width)
     # 輸出當前的總金額
@@ -29,10 +29,9 @@ def addRecord(newItems):
     delta = 0  # 記錄金額的變動值
     # 遍歷新增的每個項目
     for newItem in newItems:
-        newItem = newItem.split(' ')  # 將項目描述與金額拆開
-        newItem[1] = int(newItem[1])  # 將金額轉換為整數
-        items.append(tuple(newItem))  # 將項目添加到列表中
-        delta += newItem[1]           # 計算總金額的變動
+        newItem = newItem.split(' ')
+        items.append(newItem)  # 將項目添加到列表中
+        delta += int(newItem[1])           # 計算總金額的變動
     return delta  # 返回金額變動
 
 # 查找要刪除的紀錄，返回找到的紀錄數量
@@ -52,17 +51,16 @@ def deleteRecord(trashItems):
     # 遍歷要刪除的每個項目
     for trashItem in trashItems:
         trashItem = trashItem.split(' ')  # 將項目描述與金額拆開
-        trashItem[1] = int(trashItem[1])  # 將金額轉換為整數
-        totalFound = findTrashRecord(tuple(trashItem))  # 查找該項目出現的次數
+        totalFound = findTrashRecord(trashItem)  # 查找該項目出現的次數
         numOfDelete = 1  # 預設只刪除一個項目
         # 如果找到超過一個相同的項目，詢問使用者要刪除多少個
         if (totalFound > 1):
             numOfDelete = int(input(f"{totalFound} '{trashItem[0]} {trashItem[1]}' have been found.\nHow many do you want to delete? "))
         # 刪除指定數量的項目
         for i in range(numOfDelete):
-            if (tuple(trashItem) in items):
-                items.remove(tuple(trashItem))  # 從列表中移除項目
-                delta += trashItem[1]           # 計算金額的變動
+            if (trashItem in items):
+                items.remove(trashItem)  # 從列表中移除項目
+                delta += int(trashItem[1])           # 計算金額的變動
     return delta  # 返回金額變動
 
 # 主程式循環，根據使用者的輸入執行不同的操作
