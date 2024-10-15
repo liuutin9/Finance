@@ -1,0 +1,2 @@
+Description,Amount,Date
+salary,4000,2024-10-15 18:13:04.992948
