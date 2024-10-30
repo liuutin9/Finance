@@ -6,8 +6,6 @@ import warnings
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-globalTotal = 0
-
 # 嘗試讀取紀錄檔案，若不存在則初始化並要求輸入總金額
 def initialize():
     try:
@@ -24,17 +22,32 @@ def initialize():
         df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d')
         df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')  # 將 Amount 轉換為數字格式
         record.close()
-        print('Welcome back! You have', total, 'dollars.')
-    except (FileNotFoundError, pd.errors.EmptyDataError):
+        print('Welcome back! You have', total + initialValue, 'dollars.')
+    except (FileNotFoundError, pd.errors.EmptyDataError) as e:
+        sys.stderr.write(f"Creating a new record.txt...\n")
         print('Welcome to your personal finance tracker!')
-        initialValue = int(input('Please enter your initial total amount of money: '))
+        while (True):
+            try:
+                initialValue = int(input('Please enter your initial total amount of money: '))
+                break
+            except ValueError:
+                sys.stderr.write("Error: Invalid input format. Please enter an integer.\n")
+
         total = initialValue
         df = pd.DataFrame(columns=['Description', 'Amount', 'Date'])
-    return df, initialValue, total
+    return df, initialValue
 
 
-def view(df):
-    total = df['Amount'].sum()
+def view(df:pd.DataFrame, initialValue:int) -> None:
+    '''
+    View the records in the dataframe
+    Args:
+        df: pandas.DataFrame
+        initialValue: int (initial total amount of money)
+    Returns:
+        None
+    '''
+    total = df['Amount'].sum() + initialValue
     description_width = 20
     amount_width = 8
     date_width = 12
@@ -94,7 +107,15 @@ def view(df):
 
 
 
-def add(df, newItems):
+def add(df:pd.DataFrame, newItems:list) -> pd.DataFrame:
+    '''
+    Add a new record to the dataframe
+    Args:
+        df: pandas.DataFrame
+        newItems: list of [description, amount, date]
+    Returns:
+        pandas.DataFrame (updated dataframe)
+    '''
     try:
         for newItem in newItems:
             description, amount, dateStr = newItem.split(' ')
@@ -107,11 +128,27 @@ def add(df, newItems):
         sys.stderr.write("Error: Invalid input format. Please use 'description amount date(yyyy-mm-dd)'.\n")
     return df
 
-def findTrashRecord(df, trashItem):
+def findTrashRecord(df:pd.DataFrame, trashItem:list) -> int:
+    '''
+    Return the number of records found in the dataframe
+    Args:
+        df: pandas.DataFrame
+        trashItem: [description, amount, date]
+    Returns:
+        int (number of records found)
+    '''
     # print(df['Description'] == trashItem[0])
     return df[(df['Description'] == trashItem[0]) & (df['Amount'] == int(trashItem[1])) & (df['Date'] == trashItem[2])].shape[0]
 
-def delete(df, trashItems):
+def delete(df:pd.DataFrame, trashItems:list) -> pd.DataFrame:
+    '''
+    Delete the records in the dataframe
+    Args:
+        df: pandas.DataFrame
+        trashItems: [description, amount, date]
+    Returns:
+        pandas.DataFrame (updated dataframe)
+    '''
     try:
         for trashItem in trashItems:
             description, amount, dateStr = trashItem.split(' ')
@@ -132,7 +169,15 @@ def delete(df, trashItems):
         sys.stderr.write("Error: Invalid input format. Please use 'description amount date(yyyy-mm-dd)'.\n")
     return df
 
-def save(df, initialValue):
+def save(df:pd.DataFrame, initialValue:int) -> None:
+    '''
+    Save the records to a file
+    Args:
+        df: pandas.DataFrame
+        initialValue: int (initial total amount of money)
+    Returns:
+        None
+    '''
     csvFile = str(df.to_csv(index=False))
     with open('records.txt', 'w', newline='') as f:
         f.write(f'{initialValue},{df['Amount'].sum()}\n')
@@ -140,7 +185,7 @@ def save(df, initialValue):
 
 # 主程式循環
 def main():
-    df, initialValue, total = initialize()
+    df, initialValue = initialize()
     while True:
         try:
             op = input('What do you want to do (add / view / delete / exit)? ')
@@ -149,15 +194,15 @@ def main():
                 print('Records saved to file. Exiting...')
                 exit()
             elif op == 'add':
-                newItems = input('Add an expense or income record with description and amount:\n').split(', ')
+                newItems = input('Add an expense or income record with description and amount:\n(description, amount, yyyy-mm-dd)\n').split(', ')
                 df = add(df, newItems)
             elif op == 'view':
-                view(df)
+                view(df, initialValue)
             elif op == 'delete':
                 trashItems = input('Which record do you want to delete?\n').split(', ')
                 df = delete(df, trashItems)
             else:
-                print('Invalid command. Try again.')
+                raise ValueError('Invalid command. Try again.')
         except Exception as e:
             sys.stderr.write(f"An error occurred: {e}\n")
 
