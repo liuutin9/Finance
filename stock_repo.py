@@ -49,13 +49,10 @@ stock_symbols = ["BND", "VT"]
 stocks = ['006208', '00692', '00878', '2890', '2891']
 
 stockRepo = {}
-stockRepoFileInput = open("stock_repo.txt", mode = "r", encoding = "utf-8")
-stockRepo = json.load(stockRepoFileInput)
-stockRepoFileInput.close()
+with open("stock_repo.txt", mode="r", encoding="utf-8") as stockRepoFileInput:
+    stockRepo = json.load(stockRepoFileInput)
 
 stocks = [*(stockRepo['TW'])] + [*(stockRepo['US'])]
-
-stockRepoFile = open("stock_repo.txt", mode = "w", encoding = "utf-8")
 
 exchangeRateUSD = get_exchange_rate_USD()
 
@@ -70,13 +67,11 @@ for stock in stocks:
         stockPrice = float(get_stock_price(stock + ".TW"))
         stockRepo['TW'][stock]['ClosingPrice'] = stockPrice
     
-print(str(stockRepo).replace("'", '"'), file = stockRepoFile)
-    
-stockRepoFile.close()
+with open("stock_repo.txt", mode="w", encoding="utf-8") as stockRepoFile:
+    json.dump(stockRepo, stockRepoFile, ensure_ascii=False, indent=4)
 
-log = open("stock_repo_log.txt", mode = "w", encoding = "utf-8")
-now = datetime.datetime.now().replace(microsecond = 0)
-print(now, file = log)
-print(now)
-print("Stock Repo Update Success!")
-log.close()
+with open("stock_repo_log.txt", mode="w", encoding="utf-8") as log:
+    now = datetime.datetime.now().replace(microsecond=0)
+    print(now, file=log)
+    print(now)
+    print("Stock Repo Update Success!")
