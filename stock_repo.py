@@ -46,7 +46,7 @@ def get_exchange_rate_USD():
 
 # 股票代碼
 stock_symbols = ["BND", "VT"]
-stocks = ['006208', '00692', '00878', '2890', '2891']
+stocks = ['006208', '00692', '2890', '2891']
 
 stockRepo = {}
 with open("stock_repo.txt", mode="r", encoding="utf-8") as stockRepoFileInput:
