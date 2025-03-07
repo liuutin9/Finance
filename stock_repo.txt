@@ -3,20 +3,20 @@
         "006208": {
             "Name": "富邦台50",
             "ClosingPrice": 110.3,
-            "shares": 557,
-            "cost": 88.67
+            "shares": 575,
+            "cost": 89.35
         },
         "00692": {
             "Name": "富邦公司治理",
             "ClosingPrice": 43.85,
-            "shares": 1616,
-            "cost": 31.65
+            "shares": 1638,
+            "cost": 31.81
         },
         "2890": {
             "Name": "永豐金",
             "ClosingPrice": 22.6,
-            "shares": 4286,
-            "cost": 17.38
+            "shares": 4325,
+            "cost": 17.42
         },
         "2891": {
             "Name": "中信金",
