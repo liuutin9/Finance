@@ -28,7 +28,7 @@
     "US": {
         "VT": {
             "Name": "VT",
-            "ClosingPrice": 3865.8899199999996,
+            "ClosingPrice": 3866.8774599999997,
             "shares": 30.57537,
             "cost": 3383.64
         },
