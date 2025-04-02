@@ -2,25 +2,25 @@
     "TW": {
         "006208": {
             "Name": "富邦台50",
-            "ClosingPrice": 103.75,
+            "ClosingPrice": 103.7,
             "shares": 575,
             "cost": 89.35
         },
         "00692": {
             "Name": "富邦公司治理",
-            "ClosingPrice": 41.19,
+            "ClosingPrice": 41.23,
             "shares": 1638,
             "cost": 31.81
         },
         "2890": {
             "Name": "永豐金",
-            "ClosingPrice": 22.3,
+            "ClosingPrice": 22.55,
             "shares": 4325,
             "cost": 17.42
         },
         "2891": {
             "Name": "中信金",
-            "ClosingPrice": 39.9,
+            "ClosingPrice": 40.4,
             "shares": 400,
             "cost": 33.25
         }
@@ -28,13 +28,13 @@
     "US": {
         "VT": {
             "Name": "VT",
-            "ClosingPrice": 3859.2477499999995,
+            "ClosingPrice": 3854.59455,
             "shares": 30.57537,
             "cost": 3374.71
         },
         "BND": {
             "Name": "BND",
-            "ClosingPrice": 2436.372,
+            "ClosingPrice": 2433.4343999999996,
             "shares": 13.455245,
             "cost": 2241.58
         }
