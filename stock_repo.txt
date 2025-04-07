@@ -4,7 +4,7 @@
             "Name": "富邦台50",
             "ClosingPrice": 93.35,
             "shares": 597,
-            "cost": 89.50
+            "cost": 89.5
         },
         "00692": {
             "Name": "富邦公司治理",
@@ -28,13 +28,13 @@
     "US": {
         "VT": {
             "Name": "VT",
-            "ClosingPrice": 3494.9705,
+            "ClosingPrice": 3446.19,
             "shares": 30.57537,
             "cost": 3374.71
         },
         "BND": {
             "Name": "BND",
-            "ClosingPrice": 2440.8582999999994,
+            "ClosingPrice": 2406.69,
             "shares": 13.455245,
             "cost": 2241.58
         }
