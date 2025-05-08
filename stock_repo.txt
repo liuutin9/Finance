@@ -36,7 +36,7 @@
             "Name": "BND",
             "ClosingPrice": 2204.9334,
             "shares": 14.320305,
-            "cost": 2228.65
+            "cost": 2223.84
         }
     }
 }
