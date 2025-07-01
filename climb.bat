@@ -1,6 +1,6 @@
 @echo off
 chcp 65001
-cd "C:\Users\Utin Liu\OneDrive\桌面\Finance\"
+cd "C:\Users\Utin Liu\Desktop\Finance\"
 git pull --rebase
 python climb.py
 python stock_repo.py
