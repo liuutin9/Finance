@@ -16,7 +16,7 @@
             "Name": "永豐金",
             "ClosingPrice": 24.55,
             "shares": 4485,
-            "cost": 17.60
+            "cost": 17.6
         },
         "2891": {
             "Name": "中信金",
@@ -28,13 +28,13 @@
     "US": {
         "VT": {
             "Name": "VT",
-            "ClosingPrice": 3762.74189,
+            "ClosingPrice": 3728.6611200000007,
             "shares": 33.10018,
             "cost": 3377.17
         },
         "BND": {
             "Name": "BND",
-            "ClosingPrice": 2118.66228,
+            "ClosingPrice": 2111.7772800000002,
             "shares": 14.781595,
             "cost": 2217.22
         }
