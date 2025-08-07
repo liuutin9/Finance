@@ -28,13 +28,13 @@
     "US": {
         "VT": {
             "Name": "VT",
-            "ClosingPrice": 3881.2284,
+            "ClosingPrice": 3882.5364000000004,
             "shares": 34.10644,
             "cost": 3389.08
         },
         "BND": {
             "Name": "BND",
-            "ClosingPrice": 2184.22953,
+            "ClosingPrice": 2184.96563,
             "shares": 14.781595,
             "cost": 2212.41
         }
