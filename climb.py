@@ -37,7 +37,7 @@ def get_exchange_rate_USD():
 wb = load_workbook("帳目表.xlsx")
 
 # 股票代碼
-stock_symbols = ["006208.TW", "00692.TW", "2890.TW", "BND", "VT"]
+stock_symbols = ["006208.TW", "00692.TW", "2890.TW", "2891.TW", "BND", "VT"]
 
 # 獲取股價
 stock_prices = {}
