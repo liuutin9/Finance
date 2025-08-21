@@ -23,19 +23,12 @@ def get_stock_price(symbol):
 
 # Function to get the exchange rate for USD
 def get_exchange_rate_USD():
-    url = 'https://mma.sinopac.com/ws/share/rate/ws_exchange.ashx'
-    headers = {
-        'Authorization': 'Bearer your_api_key',  # Replace 'your_api_key' with actual API key
-    }
-    params = {
-        'Lang': 'zh-TW',
-        'Currency': 'USD',
-    }
-    
-    response = requests.get(url, headers=headers, params=params)
-    data = json.loads(response.content)
-    
-    return float(data[0]['SubInfo'][0]['DataValue2'])
+    url = "https://rate.bot.com.tw/xrt/flcsv/0/day"
+    response = requests.get(url)
+    response.encoding = 'utf-8'
+    rows = response.text.split('\n')
+    rate = rows[1].split(',')[13]  # Assuming the rate is in the 13th column
+    return float(rate)
 
 # Load the stock repository from file
 with open("stock_repo.txt", mode="r", encoding="utf-8") as stockRepoFileInput:
