@@ -18,21 +18,13 @@ def get_stock_price(symbol):
         return "Failed to fetch data"
     
 def get_exchange_rate_USD():
-    url = 'https://mma.sinopac.com/ws/share/rate/ws_exchange.ashx'
+    url = "https://rate.bot.com.tw/xrt/flcsv/0/day"
+    response = requests.get(url)
+    response.encoding = 'utf-8'
+    rows = response.text.split('\n')
+    rate = rows[1].split(',')[13]  # Assuming the rate is in the 13th column
+    return float(rate)
 
-    headers = {
-        'Authorization': 'Bearer your_api_key',
-    }
-
-    params = {
-        'Lang': 'zh-TW',
-        'Currency': 'USD',
-    }
-    
-    response = requests.get(url, headers=headers, params=params)
-    data = json.loads(response.content)
-    
-    return float(data[0]['SubInfo'][0]['DataValue2'])
 
 wb = load_workbook("帳目表.xlsx")
 
@@ -64,4 +56,3 @@ log.close()
 
 print(now)
 print("Success!")
-
