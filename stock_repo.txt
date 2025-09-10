@@ -27,13 +27,13 @@
     },
     "US": {
         "VT": {
-            "Name": "VT",
+            "Name": "Vanguard Total World Stock ETF",
             "ClosingPrice": 4114.677000000001,
-            "shares": 35.10368,
-            "cost": 3402.73
+            "shares": 36.066,
+            "cost": 3421.60
         },
         "BND": {
-            "Name": "BND",
+            "Name": "Vanguard Total Bond Market ETF",
             "ClosingPrice": 2262.7072500000004,
             "shares": 14.781595,
             "cost": 2207.27
