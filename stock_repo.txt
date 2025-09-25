@@ -6,12 +6,6 @@
             "shares": 689,
             "cost": 92.02
         },
-        "00692": {
-            "Name": "富邦公司治理",
-            "ClosingPrice": 52.75,
-            "shares": 1794,
-            "cost": 32.23
-        },
         "2890": {
             "Name": "永豐金",
             "ClosingPrice": 24.5,
