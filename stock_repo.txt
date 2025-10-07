@@ -2,19 +2,19 @@
     "TW": {
         "006208": {
             "Name": "富邦台50",
-            "ClosingPrice": 140.4,
+            "ClosingPrice": 144.05,
             "shares": 689,
             "cost": 92.02
         },
         "2890": {
             "Name": "永豐金",
-            "ClosingPrice": 25.35,
+            "ClosingPrice": 25.65,
             "shares": 4875,
             "cost": 16.55
         },
         "2891": {
             "Name": "中信金",
-            "ClosingPrice": 42.35,
+            "ClosingPrice": 42.25,
             "shares": 400,
             "cost": 30.97
         }
@@ -22,7 +22,7 @@
     "US": {
         "VT": {
             "Name": "Vanguard Total World Stock ETF",
-            "ClosingPrice": 4248.1173,
+            "ClosingPrice": 4255.7942,
             "shares": 44.1325,
             "cost": 3580.58
         }
