@@ -4,7 +4,7 @@
             "Name": "富邦台50",
             "ClosingPrice": 136.55,
             "shares": 730,
-            "cost": 95.06
+            "cost": 91.61
         },
         "2890": {
             "Name": "永豐金",
