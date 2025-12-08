@@ -22,7 +22,7 @@
     "US": {
         "VT": {
             "Name": "Vanguard Total World Stock ETF",
-            "ClosingPrice": 4410.3018,
+            "ClosingPrice": 4412.42945,
             "shares": 45.99496,
             "cost": 3609.38
         }
