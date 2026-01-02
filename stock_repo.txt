@@ -11,12 +11,6 @@
             "ClosingPrice": 28.8,
             "shares": 4974,
             "cost": 16.75
-        },
-        "2891": {
-            "Name": "中信金",
-            "ClosingPrice": 50.8,
-            "shares": 400,
-            "cost": 30.97
         }
     },
     "US": {
@@ -24,7 +18,7 @@
             "Name": "Vanguard Total World Stock ETF",
             "ClosingPrice": 4432.1052,
             "shares": 46.91187,
-            "cost": 3625.7
+            "cost": 3601.17
         }
     }
 }
