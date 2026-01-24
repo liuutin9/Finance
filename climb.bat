@@ -8,5 +8,5 @@ git checkout main
 git add .
 git commit -m "daily update"
 git push -u origin main
-pause
+#pause
 exit
