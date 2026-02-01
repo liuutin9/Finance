@@ -24,9 +24,9 @@
     "Crypto": {
         "Crypto": {
             "Name": "BTC + ETF + SOL + USDT",
-            "ClosingPrice": 94,279.98,
+            "ClosingPrice": 94279.98,
             "shares": 1,
-            "cost": 120,060
+            "cost": 120060
         }
     }
 }
