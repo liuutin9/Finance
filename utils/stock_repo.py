@@ -33,5 +33,6 @@ def update_stock_price(country:str, stock:str, current_price:float, yesterday_pr
             stockRepo['US'][stock]['YesterdayPrice'] = yesterday_price
     elif country == "Crypto":
         stockRepo['Crypto'][stock]['CurrentPrice'] = current_price
+        stockRepo['Crypto'][stock]['Cost'] = 148061.0 / stockRepo['Crypto'][stock]['Shares']
     with open("stock_repo.txt", mode="w", encoding="utf-8") as stockRepoFile:
         json.dump(stockRepo, stockRepoFile, ensure_ascii=False, indent=4)
