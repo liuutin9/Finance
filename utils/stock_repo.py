@@ -31,5 +31,7 @@ def update_stock_price(country:str, stock:str, current_price:float, yesterday_pr
         stockRepo['US'][stock]['CurrentPrice'] = current_price
         if yesterday_price is not None:
             stockRepo['US'][stock]['YesterdayPrice'] = yesterday_price
+    elif country == "Crypto":
+        stockRepo['Crypto'][stock]['CurrentPrice'] = current_price
     with open("stock_repo.txt", mode="w", encoding="utf-8") as stockRepoFile:
         json.dump(stockRepo, stockRepoFile, ensure_ascii=False, indent=4)
