@@ -29,7 +29,7 @@
             "Name": "USDT",
             "CurrentPrice": 31.525,
             "Shares": 3669,
-            "Cost": 38.78440042540484
+            "Cost": 40.354592532
         }
     }
 }
