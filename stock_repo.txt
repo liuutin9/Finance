@@ -18,8 +18,8 @@
     "US": {
         "VT": {
             "Name": "Vanguard Total World Stock ETF",
-            "CurrentPrice": 4470.4842499999995,
-            "YesterdayPrice": 4479.133699999999,
+            "CurrentPrice": 4368.3744,
+            "YesterdayPrice": 4461.401035000001,
             "Shares": 49.84392,
             "Cost": 3655.28
         }
@@ -27,7 +27,7 @@
     "Crypto": {
         "USDT": {
             "Name": "USDT",
-            "CurrentPrice": 32.035,
+            "CurrentPrice": 32.045,
             "Shares": 4345.93,
             "Cost": 36.60459326312205
         }
