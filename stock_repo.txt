@@ -28,7 +28,7 @@
         "USDT": {
             "Name": "USDT",
             "CurrentPrice": 32.06,
-            "Shares": 4345.93,
+            "Shares": 7383.7,
             "Cost": 36.60459326312205
         }
     }
