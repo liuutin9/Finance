@@ -2,15 +2,15 @@
     "TW": {
         "006208": {
             "Name": "富邦台50",
-            "CurrentPrice": 199.55,
-            "YesterdayPrice": 196.0,
+            "CurrentPrice": 199.95,
+            "YesterdayPrice": 199.55,
             "Shares": 841,
             "Cost": 100.32
         },
         "2890": {
             "Name": "永豐金",
-            "CurrentPrice": 31.65,
-            "YesterdayPrice": 32.2,
+            "CurrentPrice": 31.5,
+            "YesterdayPrice": 31.65,
             "Shares": 5091,
             "Cost": 17.06
         }
