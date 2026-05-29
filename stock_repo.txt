@@ -2,15 +2,15 @@
     "TW": {
         "006208": {
             "Name": "富邦台50",
-            "CurrentPrice": 222.5,
-            "YesterdayPrice": 221.2,
+            "CurrentPrice": 241.25,
+            "YesterdayPrice": 233.15,
             "Shares": 854,
             "Cost": 102.17
         },
         "2890": {
             "Name": "永豐金",
-            "CurrentPrice": 30.5,
-            "YesterdayPrice": 30.55,
+            "CurrentPrice": 30.0,
+            "YesterdayPrice": 29.5,
             "Shares": 5120,
             "Cost": 17.14
         }
@@ -18,8 +18,8 @@
     "US": {
         "VT": {
             "Name": "Vanguard Total World Stock ETF",
-            "CurrentPrice": 4902.87,
-            "YesterdayPrice": 4869.7425,
+            "CurrentPrice": 4968.921,
+            "YesterdayPrice": 4961.0647500000005,
             "Shares": 51.66005,
             "Cost": 3680.23
         }
@@ -27,7 +27,7 @@
     "Crypto": {
         "USDT": {
             "Name": "USDT",
-            "CurrentPrice": 31.55,
+            "CurrentPrice": 31.425,
             "Shares": 7383.7,
             "Cost": 34.34335089453797
         }
