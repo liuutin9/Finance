@@ -7,11 +7,10 @@ from datetime import datetime
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def get_exchange_rate_USD() -> float:
-    url = "https://rate.bot.com.tw/xrt/flcsv/0/day"
-    response = requests.get(url)
-    response.encoding = 'utf-8'
-    rows = response.text.split('\n')
-    rate = rows[1].split(',')[13]  # Assuming the rate is in the 13th column
+    ticker = yf.Ticker("TWD=X")
+    rate = ticker.info.get('regularMarketPrice')
+    if rate is None:
+        raise ValueError("Failed to fetch USD/TWD exchange rate from yfinance")
     return float(rate)
 
 def get_stock_price_tw(symbol:str) -> dict:
