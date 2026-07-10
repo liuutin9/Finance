@@ -30,13 +30,5 @@
             "Shares": 51.66005,
             "Cost": 3680.23
         }
-    },
-    "Crypto": {
-        "USDT": {
-            "Name": "USDT",
-            "CurrentPrice": 32.15,
-            "Shares": 7383.7,
-            "Cost": 34.34335089453797
-        }
     }
 }

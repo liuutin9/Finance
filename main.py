@@ -12,7 +12,7 @@ for stock in stocks['US']:
     stock_price_info = get_stock_price_us(stock)
     update_stock_price("US", stock, stock_price_info['current_price'], stock_price_info['yesterday_price'])
 
-update_stock_price("Crypto", "USDT", get_exchange_rate_USD())
+# update_stock_price("Crypto", "USDT", get_exchange_rate_USD())
 
 # update excel file
 wb = load_workbook("帳目表.xlsx")
