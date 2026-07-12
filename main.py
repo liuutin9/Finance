@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from openpyxl import load_workbook
 from utils.get_stock_price import get_stock_price_tw, get_stock_price_us, get_exchange_rate_USD
 from utils.stock_repo import update_stock_price, get_stocks, get_stock_repo
@@ -28,7 +28,7 @@ wb.save("帳目表.xlsx")
 wb.close()
 
 with open("stock_repo_log.txt", mode="w", encoding="utf-8") as log:
-    now = datetime.now().replace(microsecond=0)
+    now = (datetime.now() + timedelta(hours=8)).replace(microsecond=0)
     print(now, file=log)
     print(now)
     print("Stock Repo Update Success!")
