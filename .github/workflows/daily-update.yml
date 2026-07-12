@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write  # 允許這個 workflow 把 commit push 回 repo
 
+concurrency:
+  group: daily-update
+  cancel-in-progress: false  # 不取消進行中的 run,而是讓後面的排隊等前一個跑完
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -41,4 +45,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "daily update"
+          git pull --rebase origin main
           git push
