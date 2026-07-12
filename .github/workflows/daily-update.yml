@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: |
@@ -33,7 +33,7 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      - name: Run update script
+      - name: Update stock prices
         run: python main.py
         # 如果 main.py 需要 API 金鑰等機密資訊,在這裡加 env:
         # env:
