@@ -22,7 +22,7 @@ def get_stock_price_tw(symbol:str) -> dict:
         rt['code'] = data['c']
         rt['name'] = data['n']
         rt['time'] = data['t']
-        rt['current_price'] = float(data['z'])
+        rt['current_price'] = float(data['z']) if data['z'] != '-' else float(data['y'])
         rt['open_price'] = float(data['o'])
         rt['highest_price'] = float(data['h'])
         rt['lowest_price'] = float(data['l'])
