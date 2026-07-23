@@ -5,14 +5,14 @@
             "CurrentPrice": 237.9,
             "YesterdayPrice": 237.4,
             "Shares": 879,
-            "Cost": 106.15
+            "Cost": 101.40
         },
         "2890": {
             "Name": "永豐金",
             "CurrentPrice": 38.2,
             "YesterdayPrice": 38.5,
-            "Shares": 5170,
-            "Cost": 17.32
+            "Shares": 5273,
+            "Cost": 15.91
         }
     },
     "US": {
