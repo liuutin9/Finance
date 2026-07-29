@@ -18,15 +18,15 @@
     "US": {
         "VT": {
             "Name": "Vanguard Total World Stock ETF",
-            "CurrentPrice": 5000.78565,
-            "YesterdayPrice": 5004.025549999999,
+            "CurrentPrice": 4925.230320000001,
+            "YesterdayPrice": 4994.1486,
             "Shares": 52.62509,
             "Cost": 3690.29
         },
         "VOO": {
             "Name": "Vanguard S&P 500 ETF",
-            "CurrentPrice": 22062.42304,
-            "YesterdayPrice": 22008.964689999997,
+            "CurrentPrice": 21698.904280000002,
+            "YesterdayPrice": 22033.141760000002,
             "Shares": 0.24703,
             "Cost": 21977.49
         }
