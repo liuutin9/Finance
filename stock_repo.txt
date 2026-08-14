@@ -4,8 +4,8 @@
             "Name": "富邦台50",
             "CurrentPrice": 244.4,
             "YesterdayPrice": 240.9,
-            "Shares": 892,
-            "Cost": 103.37
+            "Shares": 908,
+            "Cost": 105.86
         },
         "2890": {
             "Name": "永豐金",
