@@ -11,8 +11,8 @@
             "Name": "永豐金",
             "CurrentPrice": 39.8,
             "YesterdayPrice": 39.35,
-            "Shares": 5295,
-            "Cost": 16.0
+            "Shares": 5432,
+            "Cost": 16.62
         }
     },
     "US": {
