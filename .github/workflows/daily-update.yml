@@ -4,8 +4,8 @@ on:
   schedule:
     # 台灣時間 14:30 = UTC 06:30
     - cron: '30 6 * * *'
-    # 台灣時間 06:00 = UTC 前一天 22:00
-    - cron: '0 22 * * *'
+    # 台灣時間 05:00 = UTC 前一天 21:00
+    - cron: '0 21 * * *'
   workflow_dispatch:  # 允許在 Actions 頁面手動觸發,方便測試
 
 permissions:
