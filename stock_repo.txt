@@ -21,7 +21,7 @@
             "CurrentPrice": 5053.01658,
             "YesterdayPrice": 5091.83454,
             "Shares": 52.62509,
-            "Cost": 3690.29
+            "Cost": 3681.44
         },
         "VOO": {
             "Name": "Vanguard S&P 500 ETF",
